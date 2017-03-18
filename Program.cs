@@ -56,7 +56,7 @@ namespace updateStatusExample
 
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("api", apiAccessKey);
-            HttpResponseMessage response = await client.PostAsync(apiUri, new StringContent(requestJson, Encoding.UTF8, "application/json"));
+            HttpResponseMessage response = await client.PutAsync(apiUri, new StringContent(requestJson, Encoding.UTF8, "application/json"));
             response.EnsureSuccessStatusCode();
         }
     }
